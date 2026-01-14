@@ -4,7 +4,7 @@
   const foods = ref([
   { id: 1, name: 'Pizza', desc: 'I love Pizza' },
   { id: 2, name: 'Apples', desc: 'I like apples' },
-  { id: 3, name: 'Bread', desc: 'I like bread ' }
+  { id: 3, name: 'Bread', desc: 'I like breads ' }
 ])
 </script>
 
