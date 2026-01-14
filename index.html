@@ -36,6 +36,7 @@
             <div class="info-row">
                 <div class="info-label"><i class="bi bi-gift-fill"></i> BIRTHDAY</div>
                 <div class="info-value">February 11, 2006</div>
+                
             </div>
 
             <div class="info-row">
@@ -52,7 +53,12 @@
                 <div class="info-label"><i class="bi bi-geo-alt-fill"></i> HOMETOWN</div>
                 <div class="info-value">Manila</div>
             </div>
-
+<div class="image-gallery" style="margin-top: 20px;">
+    <h3>My Gallery</h3>
+    <div v-for="image in imageList" :key="image.id" class="image-card">
+        <img :src="image.src" :alt="image.alt" style="width: 100px; margin: 5px; border-radius: 8px;">
+    </div>
+</div>
             <div class="social-profile-bar">
                 <a href="https://www.facebook.com/sirjosie/" target="_blank"><i class="bi bi-facebook"></i></a>
                 <a href="https://www.instagram.com/sirjosie/" target="_blank"><i class="bi bi-instagram"></i></a>
@@ -72,7 +78,9 @@
 
         </div>
     </div>
-
+<script src="js/vue.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
+
 
