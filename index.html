@@ -23,9 +23,12 @@
         </div>
 
         <div class="profile-right">
-            <div class="image-gallery">
-    <div v-for="image in imageList" :key="image.id" class="image-card">
-        <img :src="image.src" :alt="image.alt">
+          <div class="image-gallery">
+    <h3>My Gallery</h3>
+    <div class="gallery-grid">
+        <div v-for="image in imageList" :key="image.id" class="image-card">
+            <img :src="image.src" :alt="image.alt">
+        </div>
     </div>
 </div>
             <div class="info-row">
@@ -82,5 +85,6 @@
 <script src="js/script.js"></script>
 </body>
 </html>
+
 
 
