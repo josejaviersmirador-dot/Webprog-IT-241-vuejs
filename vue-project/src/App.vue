@@ -1,19 +1,22 @@
 <script setup>
   import { ref } from 'vue'
+  import FoodItem from './FoodItem.vue'
 
   const foods = ref([
-  { id: 1, name: 'Cookies', desc: 'I love cookies' },
-  { id: 2, name: 'Apples', desc: 'I like apples' },
-  { id: 3, name: 'Bread', desc: 'I like breads ' }
-])
+    { id: 1, name: 'Cookies', desc: 'I love cookies' },
+    { id: 2, name: 'Apples', desc: 'I like apples' },
+    { id: 3, name: 'Bread', desc: 'I like breads ' }
+  ])
 </script>
 
 <template>
   <h1>Food</h1>
-  <div v-for="food in foods" :key="food.id">
-    <h2>{{ food.name }}</h2>
-    <p>{{ food.desc }}</p>
-  </div>
+  <FoodItem 
+    v-for="x in foods" 
+    :key="x.id" 
+    :name="x.name" 
+    :desc="x.desc"
+  />
 </template>
 
 <style scoped>
