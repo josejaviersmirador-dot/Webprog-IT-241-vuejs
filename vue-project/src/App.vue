@@ -14,14 +14,14 @@ const profileSections = ref([
 const foods = ref([
   { 
     id: 1, 
-    name: 'Frontend', 
-    desc: 'Vue.js, HTML, CSS',
+    name: 'I like dragon fruit', 
+    desc: 'its sweet and juicy',
     class: 'box-pink'
   },
   { 
     id: 2, 
-    name: 'Backend', 
-    desc: 'Node.js, SQL',
+    name: 'I like te banana', 
+    desc: 'healty',
     class: 'box-yellow' 
   }
 ])
@@ -39,7 +39,7 @@ const foods = ref([
 
     <hr />
 
-    <h3>Skills</h3>
+    <h3>
     <div class="card-container">
       <div 
         v-for="item in foods" 
