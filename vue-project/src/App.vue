@@ -20,8 +20,8 @@ const foods = ref([
   },
   { 
     id: 2, 
-    name: 'I like te banana', 
-    desc: 'healty',
+    name: 'I like banana', 
+    desc: 'healthy',
     class: 'box-yellow' 
   }
 ])
@@ -39,7 +39,8 @@ const foods = ref([
 
     <hr />
 
-    <h3>
+    <h3>Food</h3>
+    
     <div class="card-container">
       <div 
         v-for="item in foods" 
