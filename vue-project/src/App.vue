@@ -2,122 +2,99 @@
 import { ref } from 'vue'
 
 const profileSections = ref([
-  '1 About Me',
-  '2 Education / Achievements',
-  '3 Course',
-  '4 IT Experience',
-  '5 Hobbies & Interests',
-  '6 Goals In Life / Dream',
-  '7 Picture Gallery'
+  'About Me',
+  'Education',
+  'Course',
+  'IT Experience',
+  'Hobbies & Interests',
+  'Goals',
+  'Picture Gallery'
 ])
 
 const foods = ref([
   { 
     id: 1, 
-    name: 'Mango and Strawberry', 
-    desc: 'I like daisy',
-    color: 'pink'
+    name: 'Frontend', 
+    desc: 'Vue.js, HTML, CSS',
+    class: 'box-pink'
   },
   { 
     id: 2, 
-    name: 'Mango and Strawberry', 
-    desc: 'I like pineapple',
-    color: 'yellow' 
+    name: 'Backend', 
+    desc: 'Node.js, SQL',
+    class: 'box-yellow' 
   }
 ])
 </script>
 
 <template>
-  <div class="main-container">
-    <h1 class="main-title">Personal Profile Web page</h1>
+  <div class="container">
+    <h1>Profile</h1>
 
-    <div class="sections-list">
-      <div v-for="(item, index) in profileSections" :key="index" class="section-item">
+    <div class="menu">
+      <div v-for="(item, index) in profileSections" :key="index" class="menu-item">
         {{ item }}
       </div>
     </div>
 
-    <div class="divider-bar"></div>
+    <hr />
 
-    <div class="food-container">
+    <h3>Skills</h3>
+    <div class="card-container">
       <div 
-        v-for="x in foods" 
-        :key="x.id" 
-        class="food-box" 
-        :class="x.color"
+        v-for="item in foods" 
+        :key="item.id" 
+        class="card" 
+        :class="item.class"
       >
-        <h2>{{ x.name }}</h2>
-        <p>{{ x.desc }}</p>
+        <h4>{{ item.name }}</h4>
+        <p>{{ item.desc }}</p>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-/* Main Layout Styles */
-.main-container {
-  font-family: Arial, sans-serif;
-  max-width: 800px;
-  margin: 0 auto;
+.container {
+  font-family: sans-serif;
+  max-width: 600px;
+  margin: 20px auto;
   padding: 20px;
+  border: 1px solid #ccc;
 }
 
-.main-title {
+h1, h3 {
   text-align: center;
-  font-weight: bold;
-  margin-bottom: 30px;
-  color: #000;
 }
 
-.sections-list {
+.menu-item {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background-color: #f9f9f9;
+}
+
+.card-container {
   display: flex;
-  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
 }
 
-.section-item {
-  padding: 15px 0;
-  border-bottom: 1px solid #ddd;
-  font-size: 16px;
-  color: #333;
+.card {
+  border: 1px solid #333;
+  padding: 15px;
+  width: 150px;
+  text-align: center;
 }
 
-.divider-bar {
-  height: 40px;
-  background-color: #f5f5f5;
-  margin: 30px 0;
+.box-pink {
+  background-color: pink;
 }
 
-.food-container {
-  display: flex;
-  gap: 20px;
-}
-
-/* Food Box Styles (Moved here from FoodItem.vue) */
-.food-box {
-  border: 2px dotted #333;
-  padding: 20px;
-  width: 250px;
-  color: #000;
-}
-
-.food-box h2 {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-.food-box p {
-  margin: 0;
-  font-size: 1rem;
-}
-
-/* Color Classes */
-.pink {
-  background-color: #ffc0cb;
-}
-
-.yellow {
-  background-color: #ffff00;
+.box-yellow {
+  background-color: yellow;
 }
 </style>
