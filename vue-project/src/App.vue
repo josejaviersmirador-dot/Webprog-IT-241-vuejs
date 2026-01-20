@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue'
-import FoodItem from './FoodItem.vue'
 
 const profileSections = ref([
   '1 About Me',
@@ -41,18 +40,21 @@ const foods = ref([
     <div class="divider-bar"></div>
 
     <div class="food-container">
-      <FoodItem 
+      <div 
         v-for="x in foods" 
         :key="x.id" 
-        :name="x.name" 
-        :desc="x.desc"
-        :color="x.color"
-      />
+        class="food-box" 
+        :class="x.color"
+      >
+        <h2>{{ x.name }}</h2>
+        <p>{{ x.desc }}</p>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+/* Main Layout Styles */
 .main-container {
   font-family: Arial, sans-serif;
   max-width: 800px;
@@ -88,5 +90,34 @@ const foods = ref([
 .food-container {
   display: flex;
   gap: 20px;
+}
+
+/* Food Box Styles (Moved here from FoodItem.vue) */
+.food-box {
+  border: 2px dotted #333;
+  padding: 20px;
+  width: 250px;
+  color: #000;
+}
+
+.food-box h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.food-box p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Color Classes */
+.pink {
+  background-color: #ffc0cb;
+}
+
+.yellow {
+  background-color: #ffff00;
 }
 </style>
