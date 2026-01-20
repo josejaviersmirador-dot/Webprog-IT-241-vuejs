@@ -1,20 +1,13 @@
 <script setup>
-<<<<<<< HEAD
 import { ref } from 'vue'
-=======
   import { ref } from 'vue'
   import FoodItem from './FoodItem.vue'
->>>>>>> 9926418c1abb9f541480a3b2c4217a0b0083c28e
-
-<<<<<<< HEAD
-// 1. Profile Data
 const profile = ref({
   name: 'Jose Javier S. Mirador',
   image: 'image/okada.jpg', // Make sure this image is in your public/image folder
   avatar: 'https://placehold.co/400x400/1e293b/FFF?text=Jose' // Backup placeholder
 })
 
-// 2. Personal Details (Loop this to create the rows)
 const personalInfo = ref([
   { id: 1, label: 'FULL NAME', value: 'Jose Javier S. Mirador', icon: 'bi bi-person-fill' },
   { id: 2, label: 'BIRTHDAY', value: 'February 11, 2006', icon: 'bi bi-gift-fill' },
@@ -23,7 +16,6 @@ const personalInfo = ref([
   { id: 5, label: 'HOMETOWN', value: 'Manila', icon: 'bi bi-geo-alt-fill' }
 ])
 
-// 3. Social Media Links
 const socials = ref([
   { id: 1, link: 'https://www.facebook.com/sirjosie/', icon: 'bi bi-facebook' },
   { id: 2, link: 'https://www.instagram.com/sirjosie/', icon: 'bi bi-instagram' },
@@ -32,29 +24,24 @@ const socials = ref([
   { id: 5, link: 'https://github.com/josejaviersmirador-dot', icon: 'bi bi-github' }
 ])
 
-// 4. Gallery Images
 const imageList = ref([
   { id: 1, src: 'https://placehold.co/150x150/06b6d4/FFF', alt: 'Gallery 1' },
   { id: 2, src: 'https://placehold.co/150x150/3b82f6/FFF', alt: 'Gallery 2' },
   { id: 3, src: 'https://placehold.co/150x150/6366f1/FFF', alt: 'Gallery 3' }
 ])
 
-// 5. Emails
 const emails = ref([
   { id: 1, address: 'jvjaviersmirador@gmail.com', icon: 'bi bi-google' },
   { id: 2, address: 'jsmirador@student.apc.edu.ph', icon: 'bi bi-envelope-fill' }
 ])
-=======
   const foods = ref([
     { id: 1, name: 'Cookies', desc: 'I love cookies' },
     { id: 2, name: 'Apples', desc: 'I like apples' },
     { id: 3, name: 'Bread', desc: 'I like breads ' }
   ])
->>>>>>> 9926418c1abb9f541480a3b2c4217a0b0083c28e
 </script>
 
 <template>
-<<<<<<< HEAD
   <div class="profile-wrapper">
     
     <div class="profile-left">
@@ -98,7 +85,7 @@ const emails = ref([
 
     </div>
   </div>
-=======
+  
   <h1>Food</h1>
   <FoodItem 
     v-for="x in foods" 
@@ -106,12 +93,7 @@ const emails = ref([
     :name="x.name" 
     :desc="x.desc"
   />
->>>>>>> 9926418c1abb9f541480a3b2c4217a0b0083c28e
 </template>
-<<<<<<< HEAD
-=======
 
 <style scoped>
 </style>
-
->>>>>>> 9926418c1abb9f541480a3b2c4217a0b0083c28e
