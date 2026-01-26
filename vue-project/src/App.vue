@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import FoodItem from './FoodItem.vue'
+
 const profile = ref({
   name: 'Jose Javier S. Mirador',
   image: 'image/okada.jpg',
@@ -34,11 +35,6 @@ const emails = ref([
   { id: 2, address: 'jsmirador@student.apc.edu.ph', icon: 'bi bi-envelope-fill' }
 ])
 
-const foods = ref([
-  { id: 1, name: 'Cookies', desc: 'I love cookies' },
-  { id: 2, name: 'Apples', desc: 'I like apples' },
-  { id: 3, name: 'Bread', desc: 'I like breads ' }
-])
 const profileSections = ref([
   'About Me',
   'Education',
@@ -49,6 +45,8 @@ const profileSections = ref([
   'Picture Gallery'
 ])
 
+// REMOVED: Duplicate foods declaration was here. 
+// KEPT: This version because it includes your CSS classes (box-pink, box-yellow).
 const foods = ref([
   { 
     id: 1, 
@@ -107,7 +105,7 @@ const foods = ref([
       </div>
 
       <div class="food-section" style="margin-top: 30px; border-top: 1px solid #ccc; padding-top: 20px;">
-        <h1>Food</h1>
+        <h1>Food Items List</h1>
         <FoodItem 
           v-for="x in foods" 
           :key="x.id" 
@@ -118,8 +116,9 @@ const foods = ref([
 
     </div>
   </div>
+
   <div class="container">
-    <h1>Profile</h1>
+    <h1>Profile Menu</h1>
 
     <div class="menu">
       <div v-for="(item, index) in profileSections" :key="index" class="menu-item">
@@ -129,7 +128,7 @@ const foods = ref([
 
     <hr />
 
-    <h3>Food</h3>
+    <h3>Food Cards</h3>
     
     <div class="card-container">
       <div 
@@ -195,7 +194,7 @@ const foods = ref([
   color: #333;
   margin-bottom: 10px;
 }
-</style>
+
 h1, h3 {
   text-align: center;
 }
@@ -230,3 +229,4 @@ h1, h3 {
 .box-yellow {
   background-color: yellow;
 }
+</style>
