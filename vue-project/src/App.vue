@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from 'vue'
 import FoodItem from './FoodItem.vue'
-import { ref } from 'vue'
 const profile = ref({
   name: 'Jose Javier S. Mirador',
   image: 'image/okada.jpg',
