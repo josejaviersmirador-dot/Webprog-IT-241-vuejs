@@ -5,7 +5,7 @@ import { supabase } from './lib/supabaseClient'
 const sports = ref([])
 
 async function getSports() {
-  const { data } = await supabase
+  const { data, error } = await supabase
     .from('Sport')
     .select('Name')
   
@@ -32,13 +32,6 @@ onMounted(() => {
 <style scoped>
 .output-container {
   padding: 40px;
-}
-ul {
-  list-style-type: disc;
-}
-li {
   font-family: sans-serif;
-  font-size: 1.2rem;
-  margin-bottom: 8px;
 }
 </style>
